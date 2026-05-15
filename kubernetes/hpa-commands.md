@@ -1,4 +1,11 @@
 # 🚀 Kubernetes HPA Setup & Autoscaling Workflow
+This implementation demonstrates Kubernetes Horizontal Pod Autoscaler (HPA) on Google Kubernetes Engine (GKE) using CPU-based scaling and real-time traffic simulation.
+
+**📌 Official Metrics Server Deployment**
+
+Metrics Server was installed using the official Kubernetes SIGs release manifest:
+
+https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 
 ## Step 1 — Deploy NGINX Application
 
