@@ -86,5 +86,30 @@ admin
 * CPU and memory utilization tracking
 * Enterprise-grade monitoring setup
 
+
+## Official Metrics Server Deployment
+
+Metrics Server was installed using the official Kubernetes SIGs release manifest:
+
+[Metrics Server Components YAML](https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml?utm_source=chatgpt.com)
+
+Deployment Command:
+
+```bash
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+```
+
+# 🔗 Official Helm & Monitoring Resources
+
+This project uses the official Prometheus Community Helm charts and Prometheus Operator stack.
+
+### Official Repositories
+
+* [Prometheus Community Helm Charts GitHub Repository](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack?utm_source=chatgpt.com)
+
+* [Prometheus Community Helm Repository](https://prometheus-community.github.io/helm-charts?utm_source=chatgpt.com)
+
+* [Prometheus Operator kube-prometheus Project](https://github.com/prometheus-operator/kube-prometheus?utm_source=chatgpt.com)
+
 ```
 ```
