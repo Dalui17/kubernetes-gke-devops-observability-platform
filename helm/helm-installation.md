@@ -1,8 +1,40 @@
-# 🚀 Helm Installation & Monitoring Stack Deployment
+# 🚀 Helm Installation & Kubernetes Monitoring Stack
 
-## Add Prometheus Community Helm Repository
+This monitoring stack was deployed using the official Prometheus Community Helm charts and Prometheus Operator ecosystem.
 
-```bash
+---
+
+# 📌 Official Helm & Monitoring Resources
+
+## Prometheus Community Helm Charts GitHub Repository
+
+https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack
+
+---
+
+## Prometheus Community Helm Repository
+
+https://prometheus-community.github.io/helm-charts
+
+---
+
+## Prometheus Operator kube-prometheus Project
+
+https://github.com/prometheus-operator/kube-prometheus
+
+---
+
+# Step 1 — Create Monitoring Namespace
+
+```bash id="5jlwm"
+kubectl create ns monitor
+```
+
+---
+
+# Step 2 — Add Helm Repository
+
+```bash id="5jlwm"
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 
 helm repo update
@@ -10,9 +42,9 @@ helm repo update
 
 ---
 
-## Install kube-prometheus-stack
+# Step 3 — Install Prometheus & Grafana Stack
 
-```bash
+```bash id="5jlwm"
 helm install kube-prometheus-stack \
 prometheus-community/kube-prometheus-stack \
 --namespace monitor
@@ -20,9 +52,9 @@ prometheus-community/kube-prometheus-stack \
 
 ---
 
-## Verify Deployment
+# Step 4 — Verify Installation
 
-```bash
+```bash id="5jlwm"
 kubectl get pods -n monitor
 
 kubectl get svc -n monitor
@@ -32,9 +64,9 @@ kubectl get deploy -n monitor
 
 ---
 
-## Expose Grafana Dashboard
+# Step 5 — Expose Grafana Dashboard
 
-```bash
+```bash id="5jlwm"
 kubectl expose deployment kube-prometheus-stack-grafana \
 --port=3000 \
 --target-port=3000 \
@@ -45,26 +77,38 @@ kubectl expose deployment kube-prometheus-stack-grafana \
 
 ---
 
-## Retrieve Grafana Admin Password
+# Step 6 — Retrieve Grafana Admin Password
 
-```bash
+```bash id="5jlwm"
 kubectl --namespace monitor get secrets kube-prometheus-stack-grafana \
 -o jsonpath="{.data.admin-password}" | base64 -d ; echo
 ```
 
 ---
 
-## Access Grafana
+# Step 7 — Access Grafana Dashboard
 
-```text
+```text id="5jlwm"
 http://<EXTERNAL-IP>:3000
 ```
 
 Default Username:
 
-```text
+```text id="5jlwm"
 admin
 ```
+
+---
+
+# Step 8 — Explore Kubernetes Dashboards
+
+Example dashboards:
+
+* Kubernetes / Compute Resources / Cluster
+* Kubernetes / Compute Resources / Namespace (Pods)
+* Node Resource Monitoring
+* Workload Monitoring
+* Pod Metrics & CPU Usage
 
 ---
 
@@ -78,38 +122,11 @@ admin
 
 ---
 
-# ✅ Result
+# ✅ Final Result
 
-* Kubernetes cluster observability
-* Real-time monitoring dashboards
-* Namespace-level visibility
-* CPU and memory utilization tracking
-* Enterprise-grade monitoring setup
-
-
-## Official Metrics Server Deployment
-
-Metrics Server was installed using the official Kubernetes SIGs release manifest:
-
-[Metrics Server Components YAML](https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml?utm_source=chatgpt.com)
-
-Deployment Command:
-
-```bash
-kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
-```
-
-# 🔗 Official Helm & Monitoring Resources
-
-This project uses the official Prometheus Community Helm charts and Prometheus Operator stack.
-
-### Official Repositories
-
-* [Prometheus Community Helm Charts GitHub Repository](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack?utm_source=chatgpt.com)
-
-* [Prometheus Community Helm Repository](https://prometheus-community.github.io/helm-charts?utm_source=chatgpt.com)
-
-* [Prometheus Operator kube-prometheus Project](https://github.com/prometheus-operator/kube-prometheus?utm_source=chatgpt.com)
-
-```
-```
+* Real-time Kubernetes monitoring
+* Grafana dashboard visualization
+* Prometheus metrics collection
+* Namespace-level observability
+* Cluster resource visibility
+* Enterprise-style monitoring platform
