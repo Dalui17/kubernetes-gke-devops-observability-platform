@@ -11,7 +11,9 @@
 ![Jenkins](https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=jenkins&logoColor=white)
 
 </p>
-
+<p align="center">
+  <img src="diagrams/architecture.png" width="100%">
+</p>
 ---
 
 # 📌 Project Overview
@@ -29,9 +31,6 @@ This project demonstrates a complete **Cloud-Native Kubernetes DevOps Platform**
 ✅ CI/CD Workflow Architecture using Jenkins  
 
 ---
-
-# 🏗️ Enterprise DevOps Architecture
-
 
 ---
 
@@ -429,6 +428,8 @@ Grafana Visualization
 
 ---
 
+# 🏗️ Enterprise DevOps Architecture
+---
 ![Enterprise Architecture](diagrams/architecture-frame.png)
 
 ---
