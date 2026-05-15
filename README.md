@@ -32,9 +32,6 @@ This project demonstrates a complete **Cloud-Native Kubernetes DevOps Platform**
 
 # 🏗️ Enterprise DevOps Architecture
 
-## 📷 Architecture Diagram
-
-![Architecture](diagrams/architecture-frame.png)
 
 ---
 
@@ -429,6 +426,10 @@ Grafana Visualization
 ✅ Production-style Monitoring Architecture  
 ✅ Enterprise-grade DevOps Workflow  
 ✅ CI/CD Integration Ready  
+
+---
+
+![Enterprise Architecture](diagrams/architecture-frame.png)
 
 ---
 
