@@ -9,11 +9,29 @@
 ![Helm](https://img.shields.io/badge/Helm-0F1689?style=for-the-badge&logo=helm&logoColor=white)
 ![NGINX](https://img.shields.io/badge/NGINX-009639?style=for-the-badge&logo=nginx&logoColor=white)
 ![Jenkins](https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=jenkins&logoColor=white)
+![Repo Views](https://komarev.com/ghpvc/?username=Dalui17&color=blue&style=for-the-badge)
 
 </p>
 <p align="center">
   <img src="diagrams/architecture.png" width="100%">
 </p>
+---
+
+
+# 📑 Table of Contents
+
+- Project Overview
+- Architecture
+- Tech Stack
+- Repository Structure
+- Deployment Steps
+- HPA Setup
+- Monitoring Setup
+- Screenshots
+- Jenkins Integration
+- Final Architecture
+- Cleanup
+
 ---
 
 # 📌 Project Overview
@@ -32,11 +50,16 @@ This project demonstrates a complete **Cloud-Native Kubernetes DevOps Platform**
 
 ---
 
----
 
-# 📊 Detailed Workflow Implementation
+# 🎯 Project Objectives
 
-![Workflow](diagrams/architecture.png)
+- Implement Kubernetes Horizontal Pod Autoscaler (HPA)
+- Simulate real-world traffic scaling
+- Deploy enterprise monitoring stack
+- Visualize cluster metrics using Grafana
+- Monitor workloads using Prometheus
+- Demonstrate production-style Kubernetes observability
+- Simulate CI/CD-ready infrastructure workflow
 
 ---
 
@@ -186,7 +209,7 @@ kubectl get apiservices | grep metrics
 
 ```bash
 kubectl autoscale deployment nginx-deployment \
---cpu-percent=2 \
+--cpu-percent=50 \
 --min=2 \
 --max=5
 ```
@@ -227,7 +250,7 @@ kubectl get pods -w
 
 ## 📌 Official Helm Charts
 
-Prometheus Community Helm Charts:
+### Prometheus Community Helm Charts
 
 https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack
 
